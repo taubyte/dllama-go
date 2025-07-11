@@ -236,7 +236,83 @@ func WithTimingPerToken(timingPerToken bool) PromptParam {
 
 func WithParams(params *PromptParams) PromptParam {
 	return func(p *PromptParams) error {
-		*p = *params
+		if params == nil {
+			return nil
+		}
+
+		if params.Seed != nil {
+			p.Seed = params.Seed
+		}
+		if params.Temperature != nil {
+			p.Temperature = params.Temperature
+		}
+		if params.DynatempRange != nil {
+			p.DynatempRange = params.DynatempRange
+		}
+		if params.DynatempExponent != nil {
+			p.DynatempExponent = params.DynatempExponent
+		}
+		if params.TopK != nil {
+			p.TopK = params.TopK
+		}
+		if params.TopP != nil {
+			p.TopP = params.TopP
+		}
+		if params.MinP != nil {
+			p.MinP = params.MinP
+		}
+		if params.XtcProbability != nil {
+			p.XtcProbability = params.XtcProbability
+		}
+		if params.XtcThreshold != nil {
+			p.XtcThreshold = params.XtcThreshold
+		}
+		if params.Mirostat != nil {
+			p.Mirostat = params.Mirostat
+		}
+		if params.MirostatTau != nil {
+			p.MirostatTau = params.MirostatTau
+		}
+		if params.MirostatEta != nil {
+			p.MirostatEta = params.MirostatEta
+		}
+		if params.RepeatPenalty != nil {
+			p.RepeatPenalty = params.RepeatPenalty
+		}
+		if params.PresencePenalty != nil {
+			p.PresencePenalty = params.PresencePenalty
+		}
+		if params.FrequencyPenalty != nil {
+			p.FrequencyPenalty = params.FrequencyPenalty
+		}
+		if params.DryMultiplier != nil {
+			p.DryMultiplier = params.DryMultiplier
+		}
+		if params.DryBase != nil {
+			p.DryBase = params.DryBase
+		}
+		if params.DryAllowedLength != nil {
+			p.DryAllowedLength = params.DryAllowedLength
+		}
+		if params.DryPenaltyLastN != nil {
+			p.DryPenaltyLastN = params.DryPenaltyLastN
+		}
+		if params.MaxTokens != nil {
+			p.MaxTokens = params.MaxTokens
+		}
+		if params.MinKeep != nil {
+			p.MinKeep = params.MinKeep
+		}
+		if params.IgnoreEos != nil {
+			p.IgnoreEos = params.IgnoreEos
+		}
+		if params.NoPerf != nil {
+			p.NoPerf = params.NoPerf
+		}
+		if params.TimingPerToken != nil {
+			p.TimingPerToken = params.TimingPerToken
+		}
+
 		return nil
 	}
 }
