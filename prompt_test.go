@@ -47,7 +47,7 @@ func TestPrompt(t *testing.T) {
 			return 0
 		}
 
-		p, err := Generate("model", "prompt", "{}")
+		p, err := Generate("model", "prompt")
 		if err != nil {
 			t.Fatalf("Generate failed: %v", err)
 		}
@@ -87,7 +87,7 @@ func TestPrompt(t *testing.T) {
 			return -1
 		}
 
-		if _, err := Generate("model", "prompt", "{}"); err == nil {
+		if _, err := Generate("model", "prompt"); err == nil {
 			t.Fatalf("expected error, got nil")
 		}
 	})
